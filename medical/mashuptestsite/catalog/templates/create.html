@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Add</title>
+</head>
+<body style="background-color:rgb(248, 252, 251);">
+  <nav class="navbar" style="background-color: aquamarine;">
+    <a class="btn btn-success" href="{%url 'home'%}">Back</a>
+
+
+</nav>
+    <div style="margin-top: 15px;" >
+    <center><h2 style="font-family: sans-serif">Add Medicine</h2></center><br><br>
+    <div  class="mb-3">
+   <center> <div class="container" >
+      <div class="card" style="width:20rem;background-color: rgb(205, 245, 231);padding: 1rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        
+        {% block content %}
+        <form class="form-group" action="" method="POST">
+            {% csrf_token %}
+           
+           <label style="font-family: sans-serif;font-weight: 800;"> Name</label><br>
+           <input type="text" name="name"><br>
+    
+           <label style="font-family: sans-serif;font-weight: 800;">Company</label><br>
+           <input type="text" name="company"><br>
+
+           <label style="font-family: sans-serif;font-weight: 800;">Expiry_Date</label><br>
+           <input type="date" name="expiry_date"><br><br>
+       
+           <button type='submit' class="btn btn-danger">Create</button>
+
+
+           </form>
+           {% endblock %}
+        
+        </div>
+    </div></center>
+    </div>
+  </div>
+</body>
+</html>

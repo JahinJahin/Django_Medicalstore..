@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    </head>
+
+
+    <body>
+        {% block content %}
+        <center> <div style="padding-top: 50px;"><div class="card" style="width: 30%; padding-top: 30px;padding-bottom: 30px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            ">
+           <form class="form-group" action="" method="POST">
+            {% csrf_token %}
+           <h1>Signup</h1><br>
+           <label style="font-family: serif;font-weight: 800;" >User Name</label><br>
+           <input type="text" name="username"><br>
+           <label style="font-family: serif;font-weight: 800;" >Email</label><br>
+           <input type="email" name="email"><br>
+           <label style="font-family: serif;font-weight: 800;" >Password</label><br>
+           <input type="password"  name="password1"><br>
+           <label style="font-family: serif;font-weight: 800;" >Password Confirmation</label><br>
+           <input type="password"  name="password2"><br><br>
+           <button class="btn btn-danger">Submit</button><br>
+           <a href="{%url 'login'%}">Already have a account to login.....</a>
+
+
+           </form></div></div></center>
+           {% endblock %}
+
+    </body>
+</html>
